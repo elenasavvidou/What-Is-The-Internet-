@@ -1,0 +1,29 @@
+
+<h1> Screen Shots Archive </h1>
+
+<div ng-controller="imageList">
+
+    <form class="uploadform" method="POST" ng-submit= "submit()">
+        <input ng-model="username" type="text" placeholder="username" name="username" value ="">
+        <input ng-model="title" type="text" placeholder="title" name="title" value ="">
+        <input ng-model="description" type="text" placeholder="description" name="description" value ="">
+        <input ng-model="file" type="file" name="file" value ="">
+        <button type="submit" name= "button"> Upload </button>
+    </form>
+
+    <div class="wrapper">
+
+        <ul class="flex" ng-if="images.length > 0">
+
+            <li ng-repeat="image in images">
+                <a ui-sref="singleImage({ imageId: {{ image.id }} })">
+                    <div class="card" >
+                        <img src = {{image.image}} ></a>
+                        <p class="descr"> {{image.title}}. <br> {{image.description}}</p>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>

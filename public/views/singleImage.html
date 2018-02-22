@@ -1,0 +1,24 @@
+<div class="single-image-container">
+    <a ui-sref="singleImage({ imageId: image.id})"> <img src ='{{imageInfo.image}}'></a>
+</div>
+
+<form class="commentsform" method="POST" ng-submit= "submitComment()">
+    <input ng-model="author" type="text" placeholder="Name" name="author" value ="">
+    <input ng-model="comment" type="text" placeholder="Comment" name="comment" value ="">
+    <button type="submit" name= "button"> Comment! </button>
+</form>
+
+<div class="commentsclass">
+    <ul class="flex" ng-if="comments.length > 0">
+
+        <li ng-repeat="comment in comments track by $index">
+            <div class="commentcard" >
+                <p class="comment">
+                Name:{{comment.author}}<br>Commented:{{comment.comment}} <br>
+                </p>
+            </div>
+        </li>
+
+    </ul>
+
+</div>

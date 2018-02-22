@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="imageboard">
+<head>
+    <meta charset="utf-8">
+    <title> Image Board </title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
+    <script src="routes.js"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <div id="main-container">
+        <!-- <h1>TEST</h1> -->
+        <a class="home" ui-sref="home">home</a>
+        <a class="about"ui-sref="about">about</a>
+        <div ui-view="main"></div>
+    </div>
+
+</body>
+</html>
